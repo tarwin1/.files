@@ -1,0 +1,24 @@
+# Basic Settings
+set preview true
+set hidden true
+set color256 true
+set drawbox true
+set icons true
+set ignorecase true
+
+# Basic Functions
+map . set hidden!
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map mf mkfile
+map md mkdir
+map ch chmod
+map r rename
+map H top
+map L bottom
+map R reload
+map C clear
+map U unselect
