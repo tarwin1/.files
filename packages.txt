@@ -3,7 +3,6 @@ bspwm 0.9.9-2
 dash 0.5.11-1
 dmenu 4.9-2
 dunst 1.4.1-1
-efibootmgr 17-1
 git 2.27.0-1
 gvfs 1.44.1-4
 htop 2.2.0-3
