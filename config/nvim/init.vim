@@ -9,7 +9,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/rtorrent-syntax-file'
 call plug#end()
 
 " Remove trailing whitespace on save
