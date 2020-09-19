@@ -23,6 +23,8 @@ nnoremap <leader>p :filetpye detect<CR>
 
 " Temp map
 nnoremap <leader>p :filetype detect<CR>
+" Automatically closing braces
+inoremap { {}<ESC>ha
 
 " Save file as sudo when no sudo permissions
 cmap w!! w !sudo tee > /dev/null %
@@ -44,3 +46,6 @@ cmap w!! w !sudo tee > /dev/null %
 
   " Goyo
   noremap <leader>g :Goyo<CR>
+
+  " Skeleton File
+  autocmd BufNewFile  *.cpp 0r ~/.config/nvim/template/skeleton.cpp
