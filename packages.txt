@@ -1,4 +1,5 @@
 alsa-utils
+unclutter
 bspwm
 dash
 dmenu

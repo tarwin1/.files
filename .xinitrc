@@ -1,4 +1,1 @@
-xrandr --output HDMI1 --set "Broadcast RGB" "Full" &
-dunst &
-sxhkd &
-exec bspwm
+/home/murali/Repos/.files/.config/X11/xinitrc

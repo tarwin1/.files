@@ -1,5 +1,5 @@
 # FILE CHECK
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[ -f ~/.bashrc ] && . ~/.bashrc
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/.scripts" ] && PATH="$HOME/.scripts:$PATH"
 
@@ -20,7 +20,8 @@ if [ ! -d "$XDG_DATA_HOME/gnupg" ] ;
 fi
 
 if [ ! -f $XDG_CONFIG_HOME/wget/wgetrc ] ;
-   then mkdir -p "$XDG_CONFIG_HOME/wget" && echo 'hsts-file=~/.cache/wget-hsts' > "$XDG_CONFIG_HOME/wget/wgetrc"
+   then mkdir -p "$XDG_CONFIG_HOME/wget" && \
+	   echo 'hsts-file=~/.cache/wget-hsts' > "$XDG_CONFIG_HOME/wget/wgetrc"
 fi
 
 export LESSHISTFILE="-"
