@@ -9,27 +9,17 @@ export TERMINAL="st"
 export BROWSER="brave-nightly"
 export READER="zathura"
 export HISTCONTROL=ignoreboth:erasedups
-export HISTFILE="$XDG_DATA_HOME"/bash/history
+export HISTFILE="$XDG_DATA_HOME/bash/history"
 
 # ~/ Cleanup
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-
-[ ! -f "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0" ] && \
-	mkdir -p "$XDG_CONFIG_HOME/gtk-2.0" && \
-	touch "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0" && \
-	export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
-
-# stores GNUPG file .local/share instead of the home directory
-[ ! -d "$XDG_DATA_HOME/gnupg" ] && \
-	mkdir -p "$XDG_DATA_HOME/gnupg" && export PATH="$XDG_DATA_HOME/gnupg:$PATH"
-
-# stores wget hist file in cache
-[ ! -f $XDG_CONFIG_HOME/wget/wgetrc ] && \
-	mkdir -p "$XDG_CONFIG_HOME/wget" && \
-	   echo 'hsts-file=~/.cache/wget-hsts' > "$XDG_CONFIG_HOME/wget/wgetrc" && \
-	   export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-
+export XDG_CACHE_HOME="$HOME/.cache"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export GOPATH="$XDG_DATA_HOME/go"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+export PATH="$XDG_DATA_HOME/gnupg:$PATH"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export LESSHISTFILE="-"
 
 # START X SERVER

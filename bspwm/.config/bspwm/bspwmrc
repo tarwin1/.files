@@ -1,5 +1,4 @@
 #! /bin/sh
-
 ###---Autostart---###
 xrdb -load ~/.config/X11/xresources
 ###---Monitor---###
