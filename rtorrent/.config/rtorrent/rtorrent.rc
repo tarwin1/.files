@@ -1,0 +1,28 @@
+#---Directory---#
+directory.default.set = ./Downloads/torrents/completed
+session.path.set = ~/.config/rtorrent/session/
+# Watch a directory for new torrents, and stop those that have been
+schedule2 = watch_directory,5,5,load.start=~/Downloads/torrents/watch/*.torrent
+
+# Close torrents when disk-space is low.
+schedule2 = low_diskspace,5,60,close_low_diskspace=100M
+
+#---Secure---#
+network.http.ssl_verify_peer.set=0
+network.http.ssl_verify_host.set=0
+dht.mode.set = auto
+network.port_range.set = 6890-6999
+pieces.hash.on_completion.set = no
+trackers.use_udp.set = yes
+dht.port.set = 6881
+protocol.encryption.set = allow_incoming,enable_retry,prefer_plaintext
+allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
+
+#---View---#
+
+view.sort_current = complete,greater=d.up.rate=
+view.filter = seeding,"and=d.complete="
+view.sort_new = seeding,less=d.up.rate=
+view.sort = seeding
+schedule2 = filter_active,30,30,"view.filter = active,\"or={d.up.rate=,d.down.rate=}\""
+ui.torrent_list.layout.set = "full"
