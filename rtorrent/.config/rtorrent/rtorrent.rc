@@ -12,9 +12,10 @@ network.http.ssl_verify_peer.set=0
 network.http.ssl_verify_host.set=0
 dht.mode.set = auto
 network.port_range.set = 6890-6999
-pieces.hash.on_completion.set = no
+pieces.hash.on_completion.set = yes
 trackers.use_udp.set = yes
 dht.port.set = 6881
+protocol.pex.set= yes
 protocol.encryption.set = allow_incoming,enable_retry,prefer_plaintext
 allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
 
