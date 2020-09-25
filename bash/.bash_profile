@@ -1,4 +1,4 @@
-[ -f "$HOME"/.bashrc ] && . "$HOME"/.bashrc
+[ -f "$HOME"/.config/bashrc ] && . "$HOME"/.config/bashrc
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/.scripts" ] && export PATH="$HOME/.scripts:$PATH"
 
