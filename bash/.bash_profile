@@ -1,4 +1,4 @@
-[ -f "$HOME"/.config/bashrc ] && . "$HOME"/.config/bashrc
+[ -f "$HOME/.bashrc" ] && . "$HOME"/.bashrc
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/.scripts" ] && export PATH="$HOME/.scripts:$PATH"
 
@@ -8,12 +8,12 @@ export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 export HISTCONTROL=ignoreboth:erasedups
-export HISTFILE="$XDG_DATA_HOME"/bash/history
 
 # ~/ Cleanup
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CACHE_HOME="$HOME"/.cache
+export HISTFILE="$XDG_DATA_HOME"/bash/history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export GOPATH="$XDG_DATA_HOME"/go
