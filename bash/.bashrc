@@ -1,12 +1,12 @@
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 # SETS VI MODE
 set -o vi
+
 # DISABLES CTRL_S
 stty -ixon
-# ignore case when TAB completion
+
+# Binds
 bind "set completion-ignore-case on"
+bind -m vi-normal "\\C-l":clear-screen
 
 HISTSIZE= HISTFILESIZE= # INFINTE HISTORY
 
@@ -94,7 +94,6 @@ alias anew="nvim ~/.config/newsboat/urls"
 alias p="sudo pacman"
 alias y="yay"
 alias SS="sudo systemctl"
-alias mocp="mocp -M "$XDG_CONFIG_HOME"/moc"
 alias n="nnn"
 alias N="sudo nnn"
 alias v="nvim"
