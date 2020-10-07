@@ -1,198 +1,297 @@
+;---------------------------------------
+;		COLORS
+;---------------------------------------
+
 [colors]
-background = ${xrdb:background}
-background-alt = ${xrdb:color0}
-foreground = ${xrdb:foreground}
-foreground-alt = ${xrdb:color7}
-primary = #8FBCBB
-secondary = #e60053
-alert = #bd2c40
+nord0 = #2E3440
+nord1 = #3B4252
+nord2 = #434C5E
+nord3 = #4C566A
+nord4 = #D8DEE9
+nord5 = #E5E9F0
+nord6 = #ECEFF4
+nord7 = #8FBCBB
+nord8 = #88C0D0
+nord9 = #81A1C1
+nord10 = #5E81AC
+nord11 = #BF616A
+nord12 = #D08770
+nord13 = #EBCB8B
+nord14 = #A3BE8C
+nord15 = #B48EAD
+
+;---------------------------------------
+;		GLOBAL
+;---------------------------------------
 
 [bar/default]
 width = 100%
-height = 27
-radius = 0.0
-fixed-center = true
-wm-restack = bspwm
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-tray-position = right
-tray-padding = 1
-tray-background = ${colors.background-alt}
-tray-offset-x = 0
-tray-offset-y = 0
-tray-scale = 1.0
-
+height = 24
+bottom = false
 line-size = 3
-line-color = #f00
 
-border-size = 0
-border-color = #00000000
+background = ${colors.nord1}
 
-padding-left = 3
-padding-right = 3
+wm-restack = bspwm
 
-module-margin-left = 1
-module-margin-right = 2
+;---------------------------------------
+;		FONTS
+;---------------------------------------
 
-font-0 = sans:pixelsize=10;1
-font-1 = sans-serif:fontformat=truetype:size=8:antialias=false;0
-font-2 = serif:pixelsize=10;1
-font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
+font-0 = mono:pixelsize=10;3
+font-1 = Inconsolata Nerd Font:size=8;1
+font-2 = Noto Color Emoji:scale=10:style=Regular;2
+fonr-3 = Material Design Icons Desktop:size=11;3
 
-modules-left = bspwm xwindow
-modules-center =
-modules-right = alsa pacman-updates memory cpu temperature wlan date
+;---------------------------------------
+;	     MODULES LAYOUT
+;---------------------------------------
 
-cursor-click = pointer
-cursor-scroll = ns-resize
+modules-left = bspwm
+modules-right = network pulseaudio battery date time volume
 
-[module/pacman-updates]
-type = custom/script
-exec = yay -Qu | wc -l
-interval = 1000
-label = Updates: %output%
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-underline = #8FBCBB
+;---------------------------------------
+;	      BSPWM MODULE
+;---------------------------------------
 
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+format = <label-state>
 
-label-occupied = %index%
-label-occupied-padding = 2
+ws-icon-0 = I;󰋜
+ws-icon-1 = II;󰈹
+ws-icon-2 = III;󰠮
+ws-icon-3 = IV;󰭹
+ws-icon-4 = V;󱓷
+ws-icon-5 = VI;󱇧
+ws-icon-6 = VII;󰑖
+ws-icon-7 = VIII;󰖲
+ws-icon-8 = IX;󰕧
+ws-icon-9 = X;󰝚
+ws-icon-default = 
 
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-focused-occupied = %icon%
+label-focused-occupied-foreground = ${colors.nord0}
+label-focused-occupied-background = ${colors.nord8}
+label-focused-occupied-padding = 1
 
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-focused-urgent = %icon%
+label-focused-urgent-foreground = ${colors.nord0}
+label-focused-urgent-background = ${colors.nord11}
+label-focused-urgent-padding = 1
 
-; Separator in between workspaces
-; label-separator = |
+label-focused-empty = %icon%
+label-focused-empty-foreground = ${colors.nord0}
+label-focused-empty-background = ${colors.nord8}
+label-focused-empty-padding = 1
+
+label-occupied = %icon%
+label-occupied-foreground = ${colors.nord0}
+label-occupied-background = ${colors.nord9}
+label-occupied-padding = 1
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.nord0}
+label-urgent-background = ${colors.nord13}
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = ${colors.nord0}
+label-empty-background = ${colors.nord9}
+label-empty-padding = 1
+
+;---------------------------------------
+;	  X MODULES
+;---------------------------------------
 
 [module/xwindow]
 type = internal/xwindow
+label = %title:0:45:...%
+format-foreground = ${colors.nord0}
+format-background = ${colors.nord10}
 
-label = %title:0:30:...%
-format-underline = #8FBCBB
-format-background =
-format-padding = 1
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = ﯧ
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.nord0}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+;---------------------------------------
+;	  SYSTEM MODULE
+;---------------------------------------
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8FBCBB
-label = MEM: %percentage_used%%
-
-[module/wlan]
-type = internal/network
-interface = wlp0s20f0u8
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #8FBCBB
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-
-[module/date]
-type = internal/date
-interval = 5
-
-date = " %d-%m-%Y"
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8FBCBb
-
-label = %date% | %time%
-
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = " 🔈"
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #8FBCBB
-bar-volume-foreground-1 = #8FBCBB
-bar-volume-foreground-2 = #8FBCBB
-bar-volume-foreground-3 = #8FBCBB
-bar-volume-foreground-4 = #8FBCBB
-bar-volume-foreground-5 = #EBCB8B
-bar-volume-foreground-6 = #BF616A
-bar-volume-gradient = false
-bar-volume-indicator =
-bar-volume-indicator-font = 2
-bar-volume-fill = |
-bar-volume-fill-font = 2
-bar-volume-empty = |
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+format-prefix = "🧠 "
+format-prefix-foreground = ${colors.gray}
+format-underline = ${colors.darkcyan}
+label = %percentage_used%%
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8FBCBb
-label = CPU: %percentage:2%%
+format-prefix = "🌡 "
+format-prefix-foreground = ${colors.gray}
+format-underline = ${colors.red}
+label = %percentage%%
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+;---------------------------------------
+;	  FILESYSTEM MODULE
+;---------------------------------------
 
-format = <ramp> <label>
-format-underline = #8FBCBb
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+[module/filesystem]
+type = internal/fs
+interval = 25
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+mount-0 = /
+mount-1 = /home
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+label-mounted-background = ${colors.nord10}
+label-mounted = /: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.nord0}
 
-[settings]
-screenchange-reload = true
+;---------------------------------------
+;	   DATE MODULE
+;---------------------------------------
 
-[global/wm]
-margin-top = 0
-margin-bottom = 0
+[module/date]
+type = internal/date
+
+interval = 60
+
+date = %a %b %d %Y
+
+label = " 󰸗 %date% "
+format-foreground = ${colors.nord0}
+format-background = ${colors.nord10}
+
+;---------------------------------------
+;	   TIME MODULE
+;---------------------------------------
+[module/time]
+type = internal/date
+time = %H:%M
+
+label = "󰅐 %time%"
+
+format-foreground = ${colors.nord0}
+format-background = ${colors.nord15}
+format-padding = 1
+
+;---------------------------------------
+;	   BATTERY MODULE
+;---------------------------------------
+
+[module/battery]
+type = internal/battery
+
+battery = BAT1
+adapter = ACAD
+
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.nord0}
+format-charging-background = ${colors.nord14}
+
+format-full = <label-full>
+format-full-foreground = ${colors.nord0}
+format-full-background = ${colors.nord14}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.nord0}
+format-discharging-background = ${colors.nord14}
+
+label-charging = "%percentage%% "
+label-discharging ="%percentage%% "
+label-discharging-foreground = ${colors.nord0}
+label-full = " 󱈑 %percentage%% "
+
+ramp-capacity-0 = " 󱊡"
+ramp-capacity-1 = " 󱊢"
+ramp-capacity-2 = " 󱊣"
+
+animation-charging-0 = " 󱊤"
+animation-charging-1 = " 󱊥"
+animation-charging-2 = " 󱊦"
+
+;---------------------------------------
+;	   AUDIO MODULE
+;---------------------------------------
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+label-volume = " 󰕾 %percentage%% "
+
+label-muted = " 󰖁 Mute "
+
+format-volume-foreground = ${colors.nord0}
+format-volume-background = ${colors.nord13}
+format-muted-foreground = ${colors.nord0}
+format-muted-background = ${colors.nord13}
+
+;---------------------------------------
+;	   NETWORK MODULE
+;---------------------------------------
+[module/wlan]
+type=internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+format-packetloss = "󰤫 "
+
+ramp-signal-0 = " 󰤯"
+ramp-signal-1 = " 󰤟"
+ramp-signal-2 = " 󰤢"
+ramp-signal-3 = " 󰤥"
+ramp-signal-4 = " 󰤨"
+
+label-disconnected = " 󰤮 Disconnected "
+:label-connected = " Connected "
+label-connected = "%essid% "
+
+format-connected-foreground = ${colors.nord0}
+format-connected-background = ${colors.nord12}
+format-disconnected-foreground = ${colors.nord0}
+format-disconnected-background = ${colors.nord12}
+
+[module/eth]
+type = internal/network
+interface = eth0
+interval = 3.0
+
+format-connected = <eth-connection> <label-connected>
+format-disconnected = <label-disconnected>
+
+eth-connection = " "
+
+label-disconnected = "  Disconnected "
+:label-connected = " Connected "
+label-connected = "%essid% "
+
+format-connected-foreground = ${colors.nord0}
+format-connected-background = ${colors.nord12}
+format-disconnected-foreground = ${colors.nord0}
+format-disconnected-background = ${colors.nord12}
