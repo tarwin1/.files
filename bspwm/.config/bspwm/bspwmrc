@@ -2,6 +2,8 @@
 
 ###---Autostart---###
 xrdb -load ~/.config/X11/xresources
+xcompmgr -c &
+polybar_launch &
 ###---Monitor---###
 bspc monitor -d I II III IV V VI VII VIII IX X
 

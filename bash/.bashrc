@@ -15,36 +15,22 @@ shopt -s checkwinsize
 shopt -s autocd # change to named directory
 shopt -s cdspell # autocorrects cd misspellings
 shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
 shopt -s histappend # do not overwrite history
 shopt -s expand_aliases # expand aliases
 shopt -s checkwinsize # checks term size when bash regains control
 shopt -s histappend # append to the history file, don't overwrite it
 shopt -s checkwinsize # check the window size after each command and, if necessary,
 
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# Colors Alias
+# Alias
 alias grep="grep --color=auto"
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-# ls Alias
-alias ls='ls -hN --color=auto'
-alias la='ls -hN -a --color=auto --group-directories-first'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# More Aliases
+alias ll='ls -CaFhNl --color=auto --group-directories-first'
+alias la='ls -CaFhN --color=auto --group-directories-first'
 alias df='df -h'
 alias jctl="journalctl -p 3 -xb"
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 ### ARCHIVE EXTRACTION ##BEGIN
 # usage: ex <file>
@@ -78,28 +64,26 @@ ex ()
 PS1='\[\e[0;31m\][\[\e[0m\]\u\[\e[0;31m\]@\[\e[0m\]core\[\e[0;31m\]]\[\e[m\] \[\e[0;38;5;253m\]\w\[\e[m\] \[\e[0m\]$\[\e[m\] \[\e0'
 
 # Folder Bookmarks
-alias cc="cd ~/.config && ls -a"
-alias sc="cd ~/.local/scripts && la"
-alias dc="cd ~/Documents"
+alias cc="cd ~/.config && la"
+alias sc="cd ~/.local/bin && la"
+alias dc="cd ~/dox
 
 # File Bookmark
+
 alias bb="nvim ~/.bashrc"
 alias cbsp="nvim ~/.config/bspwm/bspwmrc"
 alias csx="nvim ~/.config/sxhkd/sxhkdrc"
 alias cvim="nvim ~/.config/nvim/init.vim"
 alias cpl="nvim ~/.config/polybar/config"
-alias anew="nvim ~/.config/newsboat/urls"
+alias news="nvim ~/.config/newsboat/urls"
 
 # Programs
+
 alias p="sudo pacman"
 alias y="yay"
 alias SS="sudo systemctl"
-alias n="nnn"
-alias N="sudo nnn"
 alias v="nvim"
-alias V="sudo nvim"
+alias vi="vifm"
 alias mkd="mkdir -v"
 alias yta="youtube-dl -f bestaudio"
 alias za="zathura"
-
-neofetch
