@@ -31,6 +31,8 @@ Print
 super + l
 	slock
 
+# Media Controls
+
 XF86AudioRaiseVolume
 	amc up
 
@@ -39,6 +41,18 @@ XF86AudioLowerVolume
 
 XF86AudioMute
 	amc tog
+
+super + F8
+	playerctl next
+
+super + F6
+	playerctl previous
+
+super + F7
+	playerctl play-pause
+
+super + F5
+	playerctl stop
 
 # WM Binding
 
