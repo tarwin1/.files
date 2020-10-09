@@ -1,0 +1,186 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/murali/
+	..
+1601693657
+'b
+	/home/murali/bin/
+	..
+1601693657
+'h
+	/home/murali/
+	..
+1601693657
+'z
+	/home/murali/.config/vifm
+	..
+1601693657
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/murali
+	..
+0
+d/home
+	murali
+1
+d/home/murali
+	Desktop
+1
+d/home/murali/Desktop
+	..
+0
+d/home/murali
+	Documents
+2
+d/home/murali/Documents
+	Download All Attachments [Re RE dear murali ] (1)
+3
+d/home/murali/Documents/Download All Attachments [Re RE dear murali ] (1)
+	Hero-MA80-08_Datasheet_R2.pdf
+1
+d/home/murali/Documents
+	Download All Attachments [Re RE dear murali ] (1)
+3
+d/home/murali
+	Documents
+2
+d/home/murali/Documents
+	Download All Attachments [Re RE dear murali ] (1)
+3
+d/home/murali
+	Downloads
+3
+d/home/murali/Downloads
+	..
+0
+d/home/murali
+	Downloads
+3
+d/home/murali/Downloads
+	Happy Halloween Scooby-Doo (2020) [1080p] [WEBRip] [5.1] [YTS.MX]
+2
+d/home/murali/Downloads/Happy Halloween Scooby-Doo (2020) [1080p] [WEBRip] [5.1] [YTS.MX]
+	Happy.Halloween.Scooby-Doo.2020.1080p.WEBRip.x264.AAC5.1-[YTS.MX].mp4
+1
+d/home/murali/Downloads
+	Latex Beamer Stuff
+2
+d/home/murali
+	Music
+4
+d/home/murali/Music
+	E. Manthiram.zip
+5
+d/home/murali
+	Pictures
+5
+d/home/murali/Pictures
+	Screenshot from 2020-10-08 14-54-14.png
+4
+d/home/murali
+	Public
+6
+d/home/murali/Public
+	..
+0
+d/home/murali
+	Public
+6
+d/home
+	..
+0
+d/
+	media
+10
+d/media
+	murali
+1
+d/media/murali
+	..
+0
+d/media
+	..
+0
+d/
+	opt
+12
+d/opt
+	wine-staging
+3
+d/opt/wine-staging
+	bin
+1
+d/opt/wine-staging/bin
+	function_grep.pl
+1
+d/opt/wine-staging
+	bin
+1
+d/opt
+	wine-staging
+3
+d/
+	opt
+12
+d
+
+# Right window history (oldest to newest):
+D/home/murali
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:set line
+:" Set line numbers to show
+:set lines
+:set lines 10
+::set sortnumbers
+:set sortnumbers
+:mark h ~/
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/murali/.local/share/vifm/Trash/000_Hubie Halloween (2020) [1080p] [WEBRip] [5.1] [YTS.MX]
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/murali/.local/share/vifm/Trash/000_nand2tetris
+	/home/murali/Videos/nand2tetris
+t/home/murali/.local/share/vifm/Trash/000_.steampath
+	/home/murali/.steampath
+t/home/murali/.local/share/vifm/Trash/000_Happy Halloween Scooby-Doo (2020) [1080p] [WEBRip] [5.1] [YTS.MX]
+	/home/murali/Downloads/Happy Halloween Scooby-Doo (2020) [1080p] [WEBRip] [5.1] [YTS.MX]
+t/home/murali/.local/share/vifm/Trash/000_Hubie Halloween (2020) [1080p] [WEBRip] [5.1] [YTS.MX]
+	/home/murali/Downloads/Hubie Halloween (2020) [1080p] [WEBRip] [5.1] [YTS.MX]
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
